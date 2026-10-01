@@ -1,120 +1,110 @@
+:root {
+    --primary: #ff3e3e;
+    --bg-dark: #0f172a;
+    --bg-card: #1e293b;
+    --text-light: #f8fafc;
+    --text-dim: #94a3b8;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-
-
-header {
-    background-color: rgb(102, 15, 174);
-    color: white;
-    padding: 20px;
-    text-align: center;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
 nav {
-    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background: rgba(15, 23, 42, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-nav a {
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 2rem; }
+nav ul li a { text-decoration: none; color: var(--text-dim); font-weight: 600; transition: 0.3s; }
+nav ul li a:hover { color: var(--primary); }
+
+.hero {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+}
+
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+.highlight { color: var(--primary); }
+
+.btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background: var(--primary);
     color: white;
     text-decoration: none;
-    margin: 15px;
-}
-
-nav a:hover {
-    color: rgb(88, 208, 28);
-}
-
-
-
-section {
-    padding: 50px;
-    text-align: center;
-}
-
-#home {
-    background-color: rgb(208, 201, 245);
-    min-height: 300px;
-}
-
-h2 {
-    color: cadetblue;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-
-
-button {
-    background-color: rgb(226, 183, 101);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    margin-top: 20px;
     border-radius: 5px;
-    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-button:hover {
-    background-color: rgb(190, 238, 202);
+.btn:hover { opacity: 0.8; transform: scale(1.05); }
+
+.container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+.section-title { text-align: center; margin-bottom: 3rem; font-size: 2rem; }
+.bg-darker { background: #0a0f1d; }
+
+.education-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 6px solid var(--primary);
 }
 
+.edu-header { display: flex; justify-content: space-between; align-items: center; }
+.year-badge { background: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+.college-name { color: var(--primary); font-weight: 600; margin: 10px 0; }
 
-
-ul {
-    list-style: none;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-li {
-    display: inline-block;
-    background-color: white;
-    padding: 15px;
-    margin: 8px;
-    border-radius: 5px;
-}
-
-
-.project {
-    background-color: white;
-    padding: 25px;
-    margin: 20px auto;
-    max-width: 500px;
-    border-radius: 8px;
-}
-
-
-
-footer {
-    background-color: darkcyan;
-    color: white;
+.card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
     text-align: center;
-    padding: 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s;
 }
 
+.card:hover { border-bottom: 3px solid var(--primary); background: #26334d; }
+.icon { font-size: 2.5rem; margin-bottom: 1rem; }
 
+.music-box { text-align: center; background: #1e293b; padding: 40px; border-radius: 12px; }
+.placeholder-player { margin-top: 1.5rem; padding: 20px; border: 2px dashed var(--text-dim); color: var(--text-dim); border-radius: 8px; }
 
-@media (max-width: 600px) {
-
-    nav a {
-        display: block;
-        margin: 10px;
-    }
-
-    section {
-        padding: 30px 15px;
-    }
-
-}
+footer { padding: 40px 0; background: #020617; text-align: center; }
+.email { color: var(--primary); margin: 10px 0; font-weight: bold; }
+.footer-bottom { font-size: 0.8rem; color: var(--text-dim); margin-top: 20px; }
